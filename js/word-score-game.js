@@ -99,7 +99,7 @@ var BAG_OF_LETTERS = [
 		new Letter('Y', 2, 4),
 		new Letter('Y', 2, 4),
 		new Letter('Z', 1, 10),
-];
+];//The characters with their credits 
 
 var YOUR_HAND = new Array();
 var SCORE = 0;
