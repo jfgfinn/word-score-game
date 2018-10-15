@@ -153,7 +153,7 @@ function findWordToUse(){
 	alert("Your code needs to go here");	
 }
 function humanFindWordToUse(){
-	
+	//type the word from letters to see if the word is real
 	 var humanFoundWord = $( "#human-word-input").val();
 	 console.log("Checking human workd of:" + humanFoundWord);
 	 if(isThisAWord(humanFoundWord)){
@@ -180,6 +180,7 @@ function successfullyAddedWord(foundWord){
 }
 
 function addToScore(letterToAddToScore){
+	//add scores 
 	SCORE = SCORE + letterToAddToScore.pointsWhenLettersUsed;
 	console.log(letterToAddToScore.pointsWhenLettersUsed + "<-Points added for " + letterToAddToScore.letter);
 	$( "#score-number").html(SCORE);
@@ -187,7 +188,7 @@ function addToScore(letterToAddToScore){
 
 
 function takeOutUsedLetters(){
-	
+	//take out used characters
 	for(ii=0; ii < YOUR_HAND.length; ii++){
 		if(YOUR_HAND[ii].used){
 			addToScore(YOUR_HAND[ii]);
@@ -230,13 +231,14 @@ function haveLettersForWord(aProposedWord){
 
 
 function resetHand(){
-	
+	//reset the words
 	for(ii=0; ii<YOUR_HAND.length; ii++){
 		YOUR_HAND[i].used = false;
 	}
 }
 
 function isThisAWord(aProposedWord){
+	//check if the word is available
 	  if (Word_List.isInList(aProposedWord)) {
 	      return true;
 	  }
@@ -260,16 +262,16 @@ function clearClasses(){
 $(document).ready(function() {
 	startGame();
 	
-	$("#find-word-button").click(function() {
+$("#find-word-button").click(function() {
 		findWordToUse();
 	});
-	$("#human-find-word-button").click(function() {
+$("#human-find-word-button").click(function() {
 		humanFindWordToUse();
 	});
-	$("#retire-hand-button").click(function() {
+$("#retire-hand-button").click(function() {
 		retireHand();
 	});
-	$('#human-word-input').keypress(function(event) {
+$('#human-word-input').keypress(function(event) {
 		if (event.which == 13) {
 			humanFindWordToUse();
 		}
